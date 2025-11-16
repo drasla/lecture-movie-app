@@ -1,18 +1,18 @@
-import { useState } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+  let count = 0; // 바닐라 JS처럼 그냥 변수
 
   const handleClick = () => {
-    setCount(count + 1)
-  }
+    count += 1;
+    document.getElementById("count").textContent = count;
+  };
 
   return (
     <>
-      <span>Total Clicks: {count}</span>
+      <span id="count">0</span>
       <button onClick={handleClick}>Click Me</button>
     </>
-  )
+  );
 }
 
 export default App
